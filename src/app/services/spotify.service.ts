@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class SpotifyService {
-  releases: any[] = [];
+  
   constructor(  private http: HttpClient) {
     console.log('Servicio de Spotify Listo!');
   }
@@ -15,11 +15,8 @@ export class SpotifyService {
     // El valor de este GET está condicionado por un Token de Spotify que tiene de duración 1 hora
 
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQB3xcUAbmLaw1uj0HZLLlaiy3oRQlX03Ep6ozY5dMQcNdjTEtELwNqamTkvlPQ324QEtuwLPQ4tKUmQu4M',
+      'Authorization': 'Bearer BQBBTokw6ycvix3q67piMEUN21kch1c1Y_0MI_OynQ-UqgPxN2yvK0RUmwbdyEeJ9L_787Pjvx-w42zBw0c',
     });
-    this.http.get('https://api.spotify.com/v1/browse/new-releases', {headers}).subscribe((datosNuevasPublicaciones: any) => {
-      console.log(datosNuevasPublicaciones);
-      this.releases = datosNuevasPublicaciones;
-    });
+    return this.http.get('https://api.spotify.com/v1/browse/new-releases', {headers});
   }
 }
