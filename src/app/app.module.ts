@@ -14,24 +14,17 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 // Importar rutas
 import { ROUTES } from './app.routes';
 
-<<<<<<< HEAD
-=======
 // Pipes
 import { NoimagePipe } from './pipes/noimage.pipe';
 
->>>>>>> Develop
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SearchComponent,
     ArtistComponent,
-<<<<<<< HEAD
-    NavbarComponent
-=======
     NavbarComponent,
     NoimagePipe
->>>>>>> Develop
   ],
   imports: [
     BrowserModule,
