@@ -18,7 +18,7 @@ import { ROUTES } from './app.routes';
 
 // Pipes
 import { NoimagePipe } from './pipes/noimage.pipe';
-import { LoadingComponent } from './componenets/shared/loading/loading.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 
 @NgModule({

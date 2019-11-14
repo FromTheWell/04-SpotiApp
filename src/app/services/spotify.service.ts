@@ -21,7 +21,7 @@ export class SpotifyService {
     // El valor de este GET está condicionado por un Token de Spotify que tiene de duración 1 hora
 
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQCHCSSdHc6EeLEDnc9v53wWPSkVWrRmXt1A-A5BeOh5U0yNqUZ1W5uk85d3XnqWtoJBM3aj5oAmUJnnHPw',
+      'Authorization': 'Bearer BQBnniz6t7d0JdmYh8OtyB8xhC8WDF8yBNRYcK-aqDBGp2XbPxz5ih_NL8Og0ApnhKUIk5-wbeimwRBU02k',
     });
 
     return this.http.get(url, {headers});
@@ -32,10 +32,17 @@ export class SpotifyService {
     .pipe( map(datosNuevosLanzamientos => datosNuevosLanzamientos['albums'].items));
   }
 
-  getArtist( termino: string) {
+  getArtists( termino: string) {
 
     return this.getQuery(`search?q=${ termino }&type=artist&limit=15`)
     .pipe( map( datosBusqueda => datosBusqueda['artists'].items));
+
+  }
+
+  getArtist( id: string) {
+
+    return this.getQuery(`artists/${ id }`);
+    // .pipe( map( datosBusqueda => datosBusqueda['artists'].items));
 
   }
 }
