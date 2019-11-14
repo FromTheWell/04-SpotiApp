@@ -4,9 +4,12 @@
     </div>
 </div>
 
-<div class="card m-5" *ngFor="let busqueda of busquedaArtista">
-    <img [src]="busqueda.images | noimage" class="card-img-top" [alt]="busqueda.name">
-    <div class="card-body">
-        <h5 class="card-title">{{busqueda.name}}</h5>
+<div class="card-columns ">
+    <div class="card" *ngFor="let busqueda of busquedaArtista">
+        <img [src]="busqueda.images | noimage" class="card-img-top" [alt]="busqueda.name">
+        <div class="card-body">
+            <h5 class="card-title">{{busqueda.name}}</h5>
+        </div>
     </div>
+
 </div>
