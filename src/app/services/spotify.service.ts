@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 // Filtrado de observables
-import { map } from "rxjs/operators";
+import { map } from 'rxjs/operators';
 
 @Injectable({
   // Metodo automatico de importación de Servicios -> Evitamos importarlo en app.modules.ts
   providedIn: 'root'
 })
 export class SpotifyService {
-  
+
   constructor(  private http: HttpClient) {
     console.log('Servicio de Spotify Listo!');
   }
@@ -21,7 +21,7 @@ export class SpotifyService {
     // El valor de este GET está condicionado por un Token de Spotify que tiene de duración 1 hora
 
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQAGphL_n7ITK7dhm9qzTFrh20Rgk50cLg7QnnA16unxLUj3B0JMu42wXGMYB64RzQW78XH6z7kzcFwhdHI',
+      'Authorization': 'Bearer BQCHCSSdHc6EeLEDnc9v53wWPSkVWrRmXt1A-A5BeOh5U0yNqUZ1W5uk85d3XnqWtoJBM3aj5oAmUJnnHPw',
     });
 
     return this.http.get(url, {headers});
