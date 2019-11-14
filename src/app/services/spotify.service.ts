@@ -21,7 +21,11 @@ export class SpotifyService {
     // El valor de este GET está condicionado por un Token de Spotify que tiene de duración 1 hora
 
     const headers = new HttpHeaders({
+<<<<<<< HEAD
       'Authorization': 'Bearer BQDV39h_nuV4ifsFTxLDL1eFbWoMgqW1Umbtb7ZP5AZMFLedfP1h-dzuRwa37iBo9r4ha_dFvviYIQGolQk',
+=======
+      'Authorization': 'Bearer BQCtEtnQT46UoU8J0zoYswH__tHYodD3OR2pSTlQfRIvf153vJN1TbN_FMBj-OhLrcEnhfQgbr6_oCrUfvU',
+>>>>>>> Develop
     });
 
     return this.http.get(url, {headers});
