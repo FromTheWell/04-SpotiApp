@@ -10,7 +10,33 @@
         <p><a [href]="artista.external_urls.spotify">Pagina de Spotify</a></p>
     </div>
     <div class="col-4 text-right">
-        <button routerLink="/search" class="btn btn-outline-danger">Regresar</button>
+        <button routerLink="/search" class="btn btn-outline-danger">Buscar</button>
+        <button routerLink="/home" class="btn btn-outline-danger">Home</button>
 
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Album</th>
+                    <th>Canción</th>
+                    <th>Vista previa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let track of topTracks">
+                    <td><img [src]="track.album.images | noimage" [alt]="track.album.name" class="img-thumb"></td>
+                    <td>{{track.album.name}}</td>
+                    <td>{{track.name}}</td>
+                    <td><audio controls>
+                        <source [src]="track.preview_url" >
+                    </audio></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
