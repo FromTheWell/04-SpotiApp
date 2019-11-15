@@ -1,12 +1,9 @@
 <div class="row">
     <div class="col">
         <input #termino type="text" (keyup)="buscar(termino.value)" class="form-control" placeholder="Buscar artista...">
+
     </div>
+    <app-loading *ngIf="loading"></app-loading>
 </div>
 
-<div class="card m-5" *ngFor="let busqueda of busquedaArtista">
-    <img [src]="busqueda.images | noimage" class="card-img-top" [alt]="busqueda.name">
-    <div class="card-body">
-        <h5 class="card-title">{{busqueda.name}}</h5>
-    </div>
-</div>
+<app-tarjetas *ngIf="!loading" [items]="busquedaArtista"></app-tarjetas>
